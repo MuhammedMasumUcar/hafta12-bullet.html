@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <p>Bahis Tutarı 1500TL</p>
+    <p>Galatasarayın Gol Sayısı : </p>
+    <p id="gs"></p>
+    <p>Fenerbahçe'nin Gol Sayısı : </p>
+    <p id="fb"></p>
+    <p id="sonuc"></p>
+    <button onclick="Oynat()">Oynat</button>
+    <img id="foto" src="indir.jpeg" style="display: none;">
+    <p id="sonuc1"></p>
+<script>
+function Oynat(){
+var gs =Math.floor(Math.random() * 6); 
+var fb =Math.floor(Math.random() * 6); 
+var foto=document.getElementById("foto");
+document.getElementById("sonuc1").innerHTML = "";
+document.getElementById("gs").innerHTML = gs;
+document.getElementById("fb").innerHTML = fb;
+if(gs>fb){
+    foto.style.display = "none";
+    document.getElementById("sonuc").innerHTML="Galatasaray Kazandı Para Heba Oldu";
+}
+else if(gs==fb){
+    foto.style.display = "none";
+   document.getElementById("sonuc").innerHTML="Beraberlik Para Heba Oldu";
+}
+else if(fb>gs){
+    document.getElementById("sonuc").innerHTML="Fener Kazandı ";
+    document.getElementById("foto").style.display="block";
+    document.getElementById("sonuc1").innerHTML="Bahis Başarılı"
+}
+    }
+</script>
+</center>
+
+</body>
+</html>
